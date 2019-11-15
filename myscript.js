@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	$("ans1").hide();
-  $("ans2").hide();
-  $("ans3").hide();
+	$("#ans1").hide();
+	$("#ans2").hide();
+	$("#ans3").hide();
 	$("#q1").click(function(){
 		$("#ans1").toggle();
 	});

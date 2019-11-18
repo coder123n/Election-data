@@ -1,12 +1,13 @@
-<!DOCTYPE html> 
+{%extends "layout.html" %}
+{% set active_page = "home" %}
 <html> 
-<head> 
+{% block title %}{% endblock %}
   <title>Election Data Exploration</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="myscript.js"></script>
-</head>
-<body> 
+{% block title %}{% endblock %}
+{% block content %}
 	<h1>2016 Election Dataset</h1>
   <h3> 
   <blockquote cite="https://corgis-edu.github.io/corgis/json/election/">
@@ -54,5 +55,5 @@
 </div>
 
 
- </body>
+{% endblock %}
 </html> 

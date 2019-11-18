@@ -9,10 +9,23 @@
   
   </head>
   <body>
-    
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<a class="navbar brand" href="/"> Election Data </a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapseibleNavbar">
+	<span class="navbar-toggler-icon"></span>
+	</button>
+		<div class="collapse navbar-collapse" id="collapsileNavbar">
+			<ul class="nav navbar-nav">
+				<li class="nav-item" {% if active_page == "home" %} class="active"{% endif%}><a href="/"> About the database</a></li>
+				<li {% if active_page == "page2" %} class="active"{% endif %}><a href="/page2">Page 2</a></li>
+				<li {% if active_page == "page3" %} class="active"{% endif %}><a href="/page3">Page 3</a></li>
+			</ul>
+		</div>
+	</nav>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+	{% block content %}{% endblock %}
+	
+  <script rel="interactive"  src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   </body>
 </html>

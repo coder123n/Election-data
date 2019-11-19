@@ -1,12 +1,8 @@
 {%extends "layout.html" %}
-{% set active_page = "home" %}
+{% set active_page = "home.html" %}
 <html> 
-{% block title %}{% endblock %}
-  <title>Election Data Exploration</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="myscript.js"></script>
-{% block title %}{% endblock %}
+{% block title %}Election Data Exploration{% endblock %}
+ 
 {% block content %}
 	<h1>2016 Election Dataset</h1>
   <h3> 
@@ -21,7 +17,7 @@
 	  <p> Above paragraph quoted from 
 		  <a href=https://corgis-edu.github.io/corgis/json/election/> CORGIS Datasets Election Project  </a></p>
 
-  <img src="dvh.jpg" alt="cartoon-like image of Donald Trump in red 
+  <img src="{{url_for('static',filename='dvh.jpg')}}" alt="cartoon-like image of Donald Trump in red 
   facing Hilary Clinton in blue with the words Election 2016 written underneath" > 
 <div>
 	<h3>
@@ -35,14 +31,14 @@
 		 <br>ballot that does not include presidential candidates,
 	     <br>only the names of candidates for voter-nominated offices
 		 <br>and local nonpartisan offices and measures
-  		 <br>https://www.sos.ca.gov/elections/political-parties/no-party-preference/
+  		 <br> <a href=https://www.sos.ca.gov/elections/political-parties/no-party-preference/> https://www.sos.ca.gov/elections/political-parties/no-party-preference/  </a>
 	</p>
 	<p id="q2" class="q">
 		What does "uncommitted" mean?
 	</p>
 	<p id="ans2">
  		not having decided or promised to support a particular political group or belief 
-  		<br>https://www.ldoceonline.com/dictionary/uncommitted
+  		<br><a href=https://www.ldoceonline.com/dictionary/uncommitted> https://www.ldoceonline.com/dictionary/uncommitted </a>
 	</p>
 	<p id="q3" class="q">
 		Why does the "percent of votes" for each canidate in a county add up to more than 100?

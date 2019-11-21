@@ -1,6 +1,9 @@
 {%extends "layout.html" %}
-{% set active_page = "page1.html" %}
-<html>
+{% set active_page = "p1" %}
+
 {% block title %}{% endblock %}
-{% block content %}{% endblock %}
-</html>
+{% block content %}
+<h1>How well did each candidate do in their hometown?</h1>
+<form action="/page1">
+</form>
+{% endblock %}

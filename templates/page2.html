@@ -1,6 +1,10 @@
 {%extends "layout.html" %}
-{% set active_page = "page2.html" %}
-<html>
+{% set active_page = "p2" %}
 {% block title %}{% endblock %}
-{% block content %}{% endblock %}
-</html>
+{% block content %}
+<h1> What state had the most democrat voters? </h1>
+<h1> What state had the most republican voters? </h1>
+<h1> How many people voted "no preference"? </h1>
+<form action="/page2">
+</form>
+{% endblock %}

@@ -37,7 +37,7 @@ var options = {
 		labelFontColor: "Peru"				
 	},
 	data: [{
-		indexLabelFontSize: 26,
+		indexLabelFontSize: 15,
 		toolTipContent: "<span style=\"color:#62C9C3\">{indexLabel}:</span> <span style=\"color:#CD853F\"><strong>{y}</strong></span>",
 		indexLabelPlacement: "inside",
 		indexLabelFontColor: "white",

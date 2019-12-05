@@ -21,9 +21,9 @@ def render_p1():
     for key in htow:
         if key not in candidate:
             candidate.append(key)
-    for person in htow
-        for data in dict
-            if person 
+    #for person in htow
+    #    for data in dict
+    #       if person 
     return render_template("page1.html",hoco=htow,can=candidate)
    
 @app.route("/page2")

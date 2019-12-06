@@ -14,22 +14,24 @@ def render_main():
 def render_p1():
     with open('election.json') as electiondata:
         dict = json.load(electiondata)
-    htow={"Ben Carson":"Wayne","Bernie Sanders":"Kings","Carly Fiorina":"Travis","Chris Christie":"Essex","Donald Trump":"Queens",
-    "Hillary Clinton":"Cook","Jeb Bush":"Midland","John Kasich":"Allegheny","Marco Rubio":"Miami-Dade","Martin O'Malley":"D.C.",
-    "Mike Huckabee":"Hempstead","Rand Paul":"Allegheny","Rick Santorum":"Frederick","Ted Cruz":"Harris"}
-    candidate=[]
-    for key in htow:
-        if key not in candidate:
-            candidate.append(key)
-    #for person in htow
-    #    for data in dict
-    #       if person 
-    return render_template("page1.html",hoco=htow,can=candidate)
+    host={"Ben Carson":"Michigan","Bernie Sanders":"New York","Carly Fiorina":"Texas","Chris Christie":"New Jersey","Donald Trump":"New York",
+    "Hillary Clinton":"Illinois","Jeb Bush":"Texas","John Kasich":"Pennsylvania","Marco Rubio":"Florida","Martin O'Malley":"Virginia",
+    "Mike Huckabee":"Arkansas","Rand Paul":"Pennsylvania","Rick Santorum":"Virginia","Ted Cruz":"Texas"}
+    votes={}
+    for key in host:
+        for data in dict:
+            if data["Location"]["State"] == host[key]:
+                votes=data["Vote Data"]["Ben Carson"]["Number of Votes"]
+                
+    return render_template("page1.html",state=host,can=candidate)
    
 @app.route("/page2")
 def render_p2():
     with open('election.json') as electiondata:
         dict = json.load(electiondata)
+    for data in dict:
+        if data["Vote Data"]["Party"]=="democrat":
+            return democrat
     return render_template("page2.html",dem=democrat,rep=republican)
    
 @app.route("/page3")

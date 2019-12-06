@@ -4,8 +4,7 @@
 {% block title %}{% endblock %}
 {% block content %}
 
-{{hoco}}
-{{can}}
+print(state)
 <script>
 window.onload = function () {
 
@@ -13,7 +12,7 @@ window.onload = function () {
 var options = {
 	animationEnabled: true,
 	title: {
-		text: "How well each candidate did in their hometown.",                
+		text: "How well each candidate did in their home state.",                
 		fontColor: "Peru"
 	},	
 	axisY: {
@@ -38,20 +37,21 @@ var options = {
 		color: "#62C9C3",
 		type: "bar",
 		dataPoints: [
-			{ y: 21, label: "21%", indexLabel: "Wayne County" },
-			{ y: 25, label: "25%", indexLabel: "Kings County" },
-			{ y: 33, label: "33%", indexLabel: "Travis County" },
-			{ y: 36, label: "36%", indexLabel: "Essex County" },
-			{ y: 42, label: "42%", indexLabel: "Queens County" },
-			{ y: 49, label: "49%", indexLabel: "Cook County" },
-			{ y: 50, label: "50%", indexLabel: "Midland County" },
-			{ y: 55, label: "55%", indexLabel: "Allegheny County" },
-			{ y: 61, label: "61%", indexLabel: "1" },
-			{ y: 50, label: "50%", indexLabel: "Miami-Dade County" },
+			{ y: 21, label: "21%", indexLabel: "Michigan" },
+			{ y: 25, label: "25%", indexLabel: "New York" },
+			{ y: 33, label: "33%", indexLabel: "Texas" },
+			{ y: 36, label: "36%", indexLabel: "New Jersey" },
+			{ y: 42, label: "42%", indexLabel: "New York" },
+			{ y: 49, label: "49%", indexLabel: "Illinois" },
+			{ y: 50, label: "50%", indexLabel: "Texas" },
+			{ y: 55, label: "55%", indexLabel: "Pennsylvania
+			{ y: 61, label: "61%", indexLabel: "Florida" },
+			{ y: 50, label: "50%", indexLabel: "Viginia" },
 			{ y: 55, label: "55%", indexLabel: "Hempstead County" },
-			{ y: 61, label: "61%", indexLabel: "Allegheny County" },
-			{ y: 50, label: "50%", indexLabel: "Frederick County" },
-			{ y: 55, label: "55%", indexLabel: "Harris County" },
+			{ y: 61, label: "61%", indexLabel: "Arkansas" },
+			{ y: 50, label: "50%", indexLabel: "Pennsylvania" },
+			{ y: 55, label: "55%", indexLabel: "Virginia" },
+			{ y: 55, label: "55%", indexLabel: "Texas" }
 		]
 	}]
 };

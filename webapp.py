@@ -18,15 +18,20 @@ def render_p1():
     "Hillary Clinton":"Illinois","Jeb Bush":"Texas","John Kasich":"Pennsylvania","Marco Rubio":"Florida","Martin O'Malley":"Virginia",
     "Mike Huckabee":"Arkansas","Rand Paul":"Pennsylvania","Rick Santorum":"Virginia","Ted Cruz":"Texas"}
     votes={}
-    print(votes)
+    graphpoint={}
     for key in host:
         for data in dict:
             if data["Location"]["State"] == host[key]:
-            
-                #votes[key]+=data["Vote Data"][key]["Number of Votes"]
-        #if data["Location"]["County"] in ["Location"]["State"]        
+                if key in votes:
+                    votes[key]+=data["Vote Data"][key]["Number of Votes"]
+                else:
+                    votes[key]=data["Vote Data"][key]["Number of Votes"]
+        #if data["Location"]["County"] in ["Location"]["State"]:
+    print(votes)
+    #for num in votes:
+        #graphpoint+= Markup("{ y: " + str(votes[num]) + ', label: "' + str(votes[num]) + '",' + " indexLabel: " + '"' + str(host[num]) + '"' + "},")
     return render_template("page1.html")
-   
+
 @app.route("/page2")
 def render_p2():
     with open('election.json') as electiondata:
@@ -34,7 +39,12 @@ def render_p2():
     #for data in dict:
         #if data["Vote Data"]["Party"]=="democrat":
         #    return democrat
-    return render_template("page2.html")#,dem=democrat,rep=republican)
+    nopref={}
+    for data in dict:
+        #if data["Vote Data"]["No Preference"] in nopref:
+        nopref+= data["Vote Data"]["No Preference"]
+    print(nopref)
+    return render_template("page2.html",no=nopref)#,dem=democrat,rep=republican)
    
 @app.route("/page3")
 def render_p3():

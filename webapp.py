@@ -27,12 +27,7 @@ def render_p2():
                 else:
                     votes[key]=data["Vote Data"][key]["Number of Votes"]
     for num in votes:
-        if votes[num] == 0:
-            graphpoint+= Markup( '{ y: ' + str(1000) + ', label: "' + str(num) + '",' + ' indexLabel: " ' + str(host[num]) + ' " },' )
-            if str[num] == "Ted Cruz":
-                graphpoint+= Markup( '{ y: ' + str(1000) + ', label: " Ted Cruz ", indexLabel: " Texas " }' )
-        else:
-            graphpoint+= Markup( '{ y: ' + str(votes[num]) + ', label: "' + str(num) + '",' + ' indexLabel: " ' + str(host[num]) + ' " },' )
+            graphpoint+= Markup( '{ y: ' + str(votes[num]) + ', label: "' + str(num) + ', ' + str(host[num]) + ' " },' )
     return render_template("page2.html",graphpoint = graphpoint)
 
 @app.route("/page3")

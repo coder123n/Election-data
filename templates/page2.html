@@ -4,47 +4,38 @@
 {% block title %}{% endblock %}
 {% block content %}
 
+
+
 <script>
 window.onload = function () {
 
-//Better to construct options first and then pass it as a parameter
-var options = {
+var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	backgroundColor: "#E2EBEB",
-	title: {
-		text: "How well did each candidate do in their home state?",                
-		fontColor: "Peru"
-	},	
-	axisY: {
-		tickThickness: 0,
-		lineThickness: 0,
-		valueFormatString: " ",
-		gridThickness: 0                    
+	title:{
+		color:"rgb(120, 10, 50)",
+		text:"How well did each candidate do in their home state?"
 	},
-	axisX: {
-		tickThickness: 0,
-		lineThickness: 0,
-		labelFontSize: 18,
-		labelFontColor: "Peru"				
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		gridColor: "rgba(255,50,50,.3)",
+		title: "Number of Votes"
 	},
 	data: [{
-		indexLabelFontSize: 15,
-		toolTipContent: "<span style=\"color:#62C9C3\">{indexLabel}:</span> <span style=\"color:#CD853F\"><strong>{y}</strong></span>",
-		indexLabelPlacement: "inside",
-		indexLabelFontColor: "white",
-		indexLabelFontWeight: 600,
-		indexLabelFontFamily: "Verdana",
-		color: "#62C9C3",
 		type: "bar",
+		name: "companies",
+		axisYType: "secondary",
+		color: "#014D65",
 		dataPoints: [
 			{{graphpoint}}
 		]
 	}]
-};
+});
+chart.render();
 
-$("#chartContainer").CanvasJSChart(options);
 }
 </script>
-
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 {% endblock %}

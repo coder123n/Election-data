@@ -1,5 +1,8 @@
 # data-exploration
 
+food website - slideshow
+
+
 baseline goal:
 3 pages
 how each candidate did in their hometown

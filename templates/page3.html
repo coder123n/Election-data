@@ -3,27 +3,17 @@
 {% block title %}{% endblock %}
 {% block content %}
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-
+<h4>This pie chart exhibits the total number of individuals that voted in either the Democratic Party or Republican Party
+<br> as well as the number of people that voted as No Preference or Uncommitted.</h4>
 <script>
 window.onload = function() {
-
-
-//CanvasJS.addColorSet(
-//                [
-//                "#2F4F4F",
-//                "#008080",
-//                "#2E8B57",
-//                "#3CB371",
-//                "#90EE90"                
-//                ]);
-				
 var chart = new CanvasJS.Chart("chartContainer", {
-	theme: "dark2", // "light1", "light2", "dark1", "dark2"
+	theme: "light2", //theme: "dark2", // "light1", "light2", "dark1", "dark2"
 	exportEnabled: true,
 	animationEnabled: true,
 	backgroundColor: "#E2EBEB",
 	title: {
-		text: "Number of active voters in each voter party in 2016 primary election"
+		text: "Number of active voters in each voter party in 2016 primaries."
 	},
 	data: [{
 		type: "pie",
@@ -34,15 +24,14 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		indexLabelFontSize: 16,
 		indexLabel: "{label} - {y} voters",
 		dataPoints: [
-			{ y: {{no}}, label: "No Preference" },
-			{ y: {{un}}, label: "Uncommitted"  },
-			{ y: {{rep}}, label: "Republican" },
-			{ y: {{dem}}, label: "Democratic" }
+			{ y: {{no}}, label: "No Preference" , color: "rgb(200,50,200)"},
+			{ y: {{un}}, label: "Uncommitted" , color:"rgb(80,50,150)"},
+			{ y: {{rep}}, label: "Republican" , color:"rgb(180,10,25)"},
+			{ y: {{dem}}, label: "Democratic" , color:"rgb(4,90,150)"}
 		]
 	}]
 });
 chart.render();
-
 }
 </script>
 {% endblock %}

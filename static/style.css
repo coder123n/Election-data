@@ -3,12 +3,16 @@ body {
 }
 
 #t{
-	text-shadow: 3px 2px red;
+	//text-shadow: 3px 2px red;
 	font-size:30px;
 }
 #h{
-	text-shadow: 3px 2px rgb(51, 102, 153);
+	//text-shadow: 3px 2px rgb(51, 102, 153);
 	font-size:30px;
+}
+
+#intro{
+	font-size:20px;
 }
 
 .q{

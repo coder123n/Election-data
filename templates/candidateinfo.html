@@ -1,0 +1,92 @@
+{%extends "layout.html" %}
+{% set active_page = "p2" %}
+{% block title %}candidate info{% endblock %}
+{% block content %}
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+	theme: "light2",
+	animationEnabled: true,
+	backgroundColor: "#E2EBEB",
+	title:{
+		color:"rgb(120, 10, 50)",
+		text:"How well did each candidate do in their home state?"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		gridColor: "rgba(255,50,50,.3)",
+		title: "Number of Votes"
+	},
+	data: [{
+		type: "bar",
+		name: "companies",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints: [
+			{{graphpoint}}
+		]
+	}]
+});
+chart.render();
+
+}
+</script>
+
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+	<li data-target="#demo" data-slide-to="3"></li>
+	<li data-target="#demo" data-slide-to="4"></li>
+	<li data-target="#demo" data-slide-to="5"></li>
+	<li data-target="#demo" data-slide-to="6"></li>
+	<li data-target="#demo" data-slide-to="7"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+	<div class="carousel-item active">
+      <img src="{{url_for('static',filename='chicago1.jpg')}}" alt="Chicago">
+    </div>
+    <div class="carousel-item">
+      <img src="{{url_for('static',filename='dc.jpg')}}" alt="D.C.">
+    </div>
+    <div class="carousel-item">
+      <img src="{{url_for('static',filename='florida.jpg')}}" alt="Florida">
+    </div>
+	<div class="carousel-item">
+      <img src="{{url_for('static',filename='newyork.jpg')}}" alt="New York">
+    </div>
+	<div class="carousel-item">
+      <img src="{{url_for('static',filename='texas1.jpg')}}" alt="Texas">
+    </div>
+	<div class="carousel-item">
+      <img src="{{url_for('static',filename='newjersey1.jpg')}}" alt="New Jersey"> 
+	</div>
+	<div class="carousel-item">
+      <img src="{{url_for('static',filename='pennsylvania.jpg')}}" alt="Pennsylvania">
+    </div>
+	<div class="carousel-item">
+      <img src="{{url_for('static',filename='arkansas.jpg')}}" alt="Arkansas">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+
+{% endblock %}

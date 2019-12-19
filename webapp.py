@@ -10,7 +10,7 @@ def render_main():
         dict = json.load(electiondata)
     return render_template("home.html")
    
-@app.route("/page2")
+@app.route("/candidateinfo")
 def render_p2():
     with open('election.json') as electiondata:
         dict = json.load(electiondata)
@@ -28,9 +28,9 @@ def render_p2():
                     votes[key]=data["Vote Data"][key]["Number of Votes"]
     for num in votes:
             graphpoint+= Markup( '{ y: ' + str(votes[num]) + ', label: "' + str(num) + ', ' + str(host[num]) + ' " },' )
-    return render_template("page2.html",graphpoint = graphpoint)
+    return render_template("candidateinfo.html",graphpoint = graphpoint)
 
-@app.route("/page3")
+@app.route("/partyinfo")
 def render_p3():
     with open('election.json') as electiondata:
         dict = json.load(electiondata)
@@ -53,14 +53,8 @@ def render_p3():
         for candidate in data["Vote Data"]:
             if data["Vote Data"][candidate]["Party"] == "Republican":
                 republican+= data["Vote Data"][candidate]["Number of Votes"]
-    return render_template("page3.html",no=nopref,un=uncommitted,dem=democrat,rep=republican)
+    return render_template("partyinfo.html",no=nopref,un=uncommitted,dem=democrat,rep=republican)
 
-   
-@app.route("/page4")
-def render_p4():
-    with open('election.json') as electiondata:
-        dict = json.load(electiondata)
-    return render_template("page4.html")
     
 if __name__=="__main__":
     app.run(debug=False, port=54321)

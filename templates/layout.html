@@ -3,9 +3,12 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
     <script src="{{url_for('static',filename='myscript.js')}}"></script>
@@ -20,9 +23,8 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li {% if active_page == "home" %}class="nav-item active"{%else%}class="nav-item"{% endif %}><a class="nav-link" href="/">About this Dataset</a></li>
-            <li {% if active_page == "p2" %}class="nav-item active"{%else%}class="nav-item"{% endif %}><a class="nav-link" href="/page2">Candidate Details</a></li>
-            <li {% if active_page == "p3" %}class="nav-item active"{%else%}class="nav-item"{% endif %}><a class="nav-link" href="/page3">Party Details</a></li> 
-			<li {% if active_page == "p4" %}class="nav-item active"{%else%}class="nav-item"{% endif %}><a class="nav-link" href="/page4">Page 4</a></li>
+            <li {% if active_page == "p2" %}class="nav-item active"{%else%}class="nav-item"{% endif %}><a class="nav-link" href="/candidateinfo">Candidate Details</a></li>
+            <li {% if active_page == "p3" %}class="nav-item active"{%else%}class="nav-item"{% endif %}><a class="nav-link" href="/partyinfo">Party Details</a></li> 
 		</ul>
 		</div>
     </nav>
